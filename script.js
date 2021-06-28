@@ -29,7 +29,6 @@ $('#refreshbtn').click(function() {
     localStorage.clear();
 });
 
-
 function showingSearchhistory(event) {
     
     wordHistory.innerHTML = "";
