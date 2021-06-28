@@ -18,12 +18,17 @@ var currentUVEl = $("UV-index");
 var wordHistory = document.getElementById('history');
     //  검색어 저장
 var searchwordHistory = JSON.parse(localStorage.getItem("search")) || [];
-// var historyItem = document.createElement("input");
+var refreshBtn = $('#refreshbtn');
 var queryUrl = "https://api.openweathermap.org/data/2.5/weather";
 var myApikey = "53b007152463c31a8e0c957416e5dd2f";
 var presentDate = moment().format('L');
 
 console.log(wordHistory);
+
+$('#refreshbtn').click(function() {
+    localStorage.clear();
+});
+
 
 function showingSearchhistory(event) {
     
@@ -41,6 +46,8 @@ function showingSearchhistory(event) {
             console.log(clickCity);
     })
 }}
+
+
 
 function handleSearchFormSubmit(event) {
     event.preventDefault();
